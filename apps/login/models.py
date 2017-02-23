@@ -7,7 +7,7 @@ class UserManager(models.Manager):
     def validation(self, postData):
         errors=[]
         if len(postData["first_name"])==0:
-            errors.append("Please insert Your First name")
+            errors.append("Please insert Your First name NOW")
         elif len(postData["first_name"])<2:
             errors.append("First Name needs to be 2-45 characters")
         elif not re.search(r'^[A-Za-z]+$', postData["first_name"]):
