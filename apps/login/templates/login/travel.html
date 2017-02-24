@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Travel Dashboard</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'courseAssign/css/normalize.css'%}"media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="{% static 'courseAssign/css/skeleton.css'%}"media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="{% static 'courseAssign/css/stylesheet.css'%}"media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div class="Container">
+            <h1>Welcome {{user.name}}</h1>
+            <a href="/logout"><button type="button" name="button">Logout</button></a>
+            <div class="schedule">
+                <h2>Your Trip Schedules</h2>
+                <table>
+                    <thead>
+                        <th><h3>Desitination</h3></th>
+                        <th><h3>Travel Start Date</h3></th>
+                        <th><h3>Trevel End Date</h3></th>
+                        <th><h3>Desitination</h3></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#"><h3>destination</h3></a></td>
+                            <td><h3>start</h3></td>
+                            <td><h3>end</h3></td>
+                            <td><h3>Plan</h3></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="travel">
+                <h2>Your Trip Schedules</h2>
+                <table>
+                    <thead>
+                        <th><h3>Name</h3></th>
+                        <th><h3>Desitination</h3></th>
+                        <th><h3>Travel Start Date</h3></th>
+                        <th><h3>Trevel End Date</h3></th>
+                        <th><h3>Do You Want to Join?</h3></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><h3>name</h3></td>
+                            <td><a href="#"><h3>destination</h3></a></td>
+                            <td><h3>start</h3></td>
+                            <td><h3>end</h3></td>
+                            <td><h3>Plan</h3></td>
+                            <td><a href="#"><h3>Join</h3></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bottom">
+                <a href="/addtravel"><h2>Add Travel Plan</h2></a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -24,16 +24,13 @@
                         {% csrf_token %}
                     <table>
                         <thead>
-                            <th><h1>registration</h1></th>
+                            <th><h1>Registration</h1></th>
                         </thead>
                         <tr>
-                            <td><h3>First Name:</h3><input type="text" name="first_name"></td>
+                            <td><h3>Name:</h3><input type="text" name="name"></td>
                         </tr>
                         <tr>
-                            <td><h3>Last Name:</h3><input type="text" name="last_name"></td>
-                        </tr>
-                        <tr>
-                            <td><h3>Email:</h3><input type="text" name="email"></td>
+                            <td><h3>username:</h3><input type="text" name="username"></td>
                         </tr>
                         <tr>
                             <td><h3>Password:</h3><input type="password" name="password"></td>
@@ -52,10 +49,10 @@
                     {% csrf_token %}
                     <table>
                         <thead>
-                            <th><h1>login</h1></th>
+                            <th><h1>Login</h1></th>
                         </thead>
                         <tr>
-                            <td><h3>Email:</h3><input type="text" name="email"></td>
+                            <td><h3>Username:</h3><input type="text" name="username"></td>
                         </tr>
                         <tr>
                             <td><h3>Password:</h3><input type="password" name="password"></td>

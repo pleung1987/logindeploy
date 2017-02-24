@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import User
+from .models import User, Travel
 from django.contrib import messages
 
 def index(request):
@@ -15,13 +15,11 @@ def success(request):
         context={
             "user": user
         }
-        print 80*"*"
-        print "user", user
-        print 80*"*"
+        # insert travel informations to the context
     except User.DoesNotExist:
         messages.add_message(request, messages.INFO, msg)
         return redirect('/')
-    return render(request,'login/success.html',context)
+    return render(request,'login/travel.html',context)
 
 def process(request):
     if request.method != 'POST':
@@ -55,6 +53,33 @@ def login(request):
             # print 80*"*"
             messages.add_message(request,messages.INFO,user_valid[1])
             return redirect('/')
+
+def addtravel(request):
+    if 'id'not in request.session:
+        messages.error(request, 'Nice try, log in or register.')
+        return redirect('/')
+    print "successfully in addtravel route"
+    return render(request, 'login/addplan.html')
+
+def travel(request):
+        if request.method != 'POST':
+            return redirect('/')
+        else:
+            travel_valid = Travel.objects.addtravel(request.POST,request.session['id'])
+            if travel_valid[0]==True:
+                print "travel_valid", travel_valid
+                return redirect('/success')
+            else:
+                print "flashes", travel_valid[1]
+                for msg in travel_valid[1]:
+                    messages.add_message(request,messages.INFO,msg)
+                return redirect('/addtravel')
+def back(request):
+    if "id" not in request.session:
+        return redirect('/')
+    else:
+        return redirect('/success')
+
 
 def logout(request):
     if "id" in request.session:

@@ -23,11 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$en4*c+9vst=dohd(=dffm)2b$4#96e#9u^jk)xuyyxi#+m!@&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['54.186.189.30']
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+# ALLOWED_HOSTS = ['54.186.189.30']
+#
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Application definition
 
@@ -108,13 +108,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
-USE_TZ = True
+USE_TZ = False
+
+DATETIME_INPUT_FORMATS = ('%d/%m/%Y','%Y/%m/%d','%Y-%m-%d',)
+DATE_INPUT_FORMATS = ('%d/%m/%Y','%Y/%m/%d','%Y-%m-%d',)
 
 
 # Static files (CSS, JavaScript, Images)

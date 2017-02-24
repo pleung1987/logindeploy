@@ -7,5 +7,8 @@ urlpatterns = [
     url(r'^success$', views.success),
     url(r'^process$', views.process),
     url(r'^login$', views.login),
-    url(r'^logout$', views.logout)
+    url(r'^logout$', views.logout),
+    url(r'^addtravel$', views.addtravel),
+    url(r'^travel$', views.travel),
+    url(r'^back$', views.back),
 ]
